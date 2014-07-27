@@ -12,7 +12,10 @@ namespace UnitTestProject1
         [TestMethod]
         public void testDownloadImgur()
         {
-            Wallpaper.Set(WallpaperRetriever.mostPopularImgurWallpaper(), Wallpaper.Style.Stretched);
+            //WallpaperScheduler.ScheduleWallpaperFetch(DateTime.Now.Hour, DateTime.Now.Hour);
+            //Wallpaper.Set(WallpaperRetriever.mostPopularImgurWallpaper(), Wallpaper.Style.Stretched);
+            Uri imageUrl = WallpaperRetriever.mostPopularImgurWallpaper();
+            Wallpaper.SetWallpaper(imageUrl.AbsoluteUri);
         }
     }
 }

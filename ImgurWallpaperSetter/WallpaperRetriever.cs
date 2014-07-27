@@ -12,11 +12,12 @@ namespace ImgurWallpaperSetter
 {
     public class WallpaperRetriever
     {
-        public static String imgurTopWallpapersUri = "http://imgur.com/r/wallpapers/top/day";
+        public static String imgurTopWallpapersUri = "http://imgur.com/r/wallpapers/top/week";
         static WebClient client = new WebClient();
         public static String downloadImgurWallpapersPageAsString()
         {
-            return client.DownloadString(imgurTopWallpapersUri);
+            String url = client.DownloadString(imgurTopWallpapersUri);
+            return url;
         }
         public static HtmlDocument imgurToHtml()
         {
